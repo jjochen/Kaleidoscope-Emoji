@@ -142,17 +142,14 @@ Key Emoji::eventHandlerHook(Key mapped_key, byte row, byte col, uint8_t key_stat
     break;
   }
 
-  typeEmoji(character, variation);
-  return Key_NoKey;
-}
-
-static void typeEmoji(uint32_t character, uint32_t variation) {
-  Unicode.start();
-  Unicode.typeCode(character);
+  kaleidoscope::Unicode::start();
+  kaleidoscope::Unicode::typeCode(character);
   if (variation > 0) {
-    Unicode.typeCode(variation);
+    kaleidoscope::Unicode::typeCode(variation);
   }
-  Unicode.end();
+  kaleidoscope::Unicode::end();
+
+  return Key_NoKey;
 }
 
 }
