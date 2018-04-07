@@ -25,11 +25,6 @@
 #include <Kaleidoscope-Emoji.h>
 #include <Kaleidoscope-Unicode.h>
 
-#ifdef ARDUINO_VIRTUAL
-#define debug_print(...) printf(__VA_ARGS__)
-#else
-#define debug_print(...)
-#endif
 
 namespace kaleidoscope {
 
@@ -37,21 +32,127 @@ Emoji::Emoji(void) {
 
 }
 
+void Emoji::begin(void) {
+  Kaleidoscope.useEventHandlerHook(eventHandlerHook);
+}
 
 Key Emoji::eventHandlerHook(Key mapped_key, byte row, byte col, uint8_t key_state) {
-  return mapped_key;
+  if (mapped_key.raw < EMOJI_FIRST || mapped_key.raw > EMOJI_LAST) {
+    return mapped_key;
+  }
+
+  if (!keyToggledOn(key_state)) {
+    return Key_NoKey;
+  }
+  uint32_t character = 0;
+  uint32_t variation = 0;
+
+  switch (mapped_key.raw) {
+  case EMOJI_ALERT:
+    character = 0x26A0;
+    variation = 0xFE0F;
+    break;
+
+  case EMOJI_BOOM:
+    character = 0x1F4A5;
+    break;
+
+  case EMOJI_CHECK:
+    character = 0x2705;
+    break;
+
+  case EMOJI_CRAZY:
+    character = 0x1F92A;
+    break;
+
+  case EMOJI_EYES:
+    character = 0x1F633;
+    break;
+
+  case EMOJI_FLOWER:
+    character = 0x1F33B;
+    break;
+
+  case EMOJI_GRIMACE:
+    character = 0x1F62C;
+    break;
+
+  case EMOJI_JOY:
+    character = 0x1F602;
+    break;
+
+  case EMOJI_KISS:
+    character = 0x1F618;
+    break;
+
+  case EMOJI_MAD:
+    character = 0x1F624;
+    break;
+
+  case EMOJI_PARTY:
+    character = 0x1F389;
+    break;
+
+  case EMOJI_PEACH:
+    character = 0x1F351;
+    break;
+
+  case EMOJI_PRESENT:
+    character = 0x1F381;
+    break;
+
+  case EMOJI_ROCKET:
+    character = 0x1F680;
+    break;
+
+  case EMOJI_SMILE:
+    character = 0x1F60A;
+    break;
+
+  case EMOJI_SUNGLASSES:
+    character = 0x1F60E;
+    break;
+
+  case EMOJI_THINKING:
+    character = 0x1F914;
+    break;
+
+  case EMOJI_THUMBSDOWN:
+    character = 0x1F44E;
+    break;
+
+  case EMOJI_THUMBSUP:
+    character = 0x1F44D;
+    break;
+
+  case EMOJI_TONGUE:
+    character = 0x1F61C;
+    break;
+
+  case EMOJI_UNICORN:
+    character = 0x1F984;
+    break;
+
+  case EMOJI_VOMIT:
+    character = 0x1F92E;
+    break;
+
+  case EMOJI_WAVE:
+    character = 0x1F44B;
+    break;
+  }
+
+  typeEmoji(character, variation);
+  return Key_NoKey;
 }
 
-
-
-void Emoji::loopHook(bool postClear) {
-
-}
-
-
-void MacrosOnTheFly::begin(void) {
-  Kaleidoscope.useEventHandlerHook(eventHandlerHook);
-  Kaleidoscope.useLoopHook(loopHook);
+static void typeEmoji(uint32_t character, uint32_t variation) {
+  Unicode.start();
+  Unicode.typeCode(character);
+  if (variation > 0) {
+    Unicode.typeCode(variation);
+  }
+  Unicode.end();
 }
 
 }
