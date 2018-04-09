@@ -44,112 +44,72 @@ Key Emoji::eventHandlerHook(Key mapped_key, byte row, byte col, uint8_t key_stat
   if (!keyToggledOn(key_state)) {
     return Key_NoKey;
   }
-  uint32_t character = 0;
-  uint32_t variation = 0;
 
-  switch (mapped_key.raw) {
-  case EMOJI_ALERT:
-    character = 0x26A0;
-    variation = 0xFE0F;
-    break;
-
-  case EMOJI_BOOM:
-    character = 0x1F4A5;
-    break;
-
-  case EMOJI_CHECK:
-    character = 0x2705;
-    break;
-
-  case EMOJI_CRAZY:
-    character = 0x1F92A;
-    break;
-
-  case EMOJI_EYES:
-    character = 0x1F633;
-    break;
-
-  case EMOJI_FLOWER:
-    character = 0x1F33B;
-    break;
-
-  case EMOJI_GRIMACE:
-    character = 0x1F62C;
-    break;
-
-  case EMOJI_JOY:
-    character = 0x1F602;
-    break;
-
-  case EMOJI_KISS:
-    character = 0x1F618;
-    break;
-
-  case EMOJI_MAD:
-    character = 0x1F624;
-    break;
-
-  case EMOJI_PARTY:
-    character = 0x1F389;
-    break;
-
-  case EMOJI_PEACH:
-    character = 0x1F351;
-    break;
-
-  case EMOJI_PRESENT:
-    character = 0x1F381;
-    break;
-
-  case EMOJI_ROCKET:
-    character = 0x1F680;
-    break;
-
-  case EMOJI_SMILE:
-    character = 0x1F60A;
-    break;
-
-  case EMOJI_SUNGLASSES:
-    character = 0x1F60E;
-    break;
-
-  case EMOJI_THINKING:
-    character = 0x1F914;
-    break;
-
-  case EMOJI_THUMBSDOWN:
-    character = 0x1F44E;
-    break;
-
-  case EMOJI_THUMBSUP:
-    character = 0x1F44D;
-    break;
-
-  case EMOJI_TONGUE:
-    character = 0x1F61C;
-    break;
-
-  case EMOJI_UNICORN:
-    character = 0x1F984;
-    break;
-
-  case EMOJI_VOMIT:
-    character = 0x1F92E;
-    break;
-
-  case EMOJI_WAVE:
-    character = 0x1F44B;
-    break;
-  }
-
-  kaleidoscope::Unicode::start();
-  kaleidoscope::Unicode::typeCode(character);
-  if (variation > 0) {
-    kaleidoscope::Unicode::typeCode(variation);
-  }
-  kaleidoscope::Unicode::end();
+  EmojiUnicode emoji = emojiForKey(mapped_key);
+  typeEmoji(emoji);
 
   return Key_NoKey;
+}
+
+Emoji::EmojiUnicode Emoji::emojiForKey(Key key) {
+  switch (key.raw) {
+  case EMOJI_ALERT:
+    return EmojiUnicode(0x26A0, 0xFE0F);
+  case EMOJI_BOOM:
+    return EmojiUnicode(0x1F4A5);
+  case EMOJI_CHECK:
+    return EmojiUnicode(0x2705);
+  case EMOJI_CRAZY:
+    return EmojiUnicode(0x1F92A);
+  case EMOJI_EYES:
+    return EmojiUnicode(0x1F633);
+  case EMOJI_FLOWER:
+    return EmojiUnicode(0x1F33B);
+  case EMOJI_GRIMACE:
+    return EmojiUnicode(0x1F62C);
+  case EMOJI_JOY:
+    return EmojiUnicode(0x1F602);
+  case EMOJI_KISS:
+    return EmojiUnicode(0x1F618);
+  case EMOJI_MAD:
+    return EmojiUnicode(0x1F624);
+  case EMOJI_PARTY:
+    return EmojiUnicode(0x1F389);
+  case EMOJI_PEACH:
+    return EmojiUnicode(0x1F351);
+  case EMOJI_PRESENT:
+    return EmojiUnicode(0x1F381);
+  case EMOJI_ROCKET:
+    return EmojiUnicode(0x1F680);
+  case EMOJI_SMILE:
+    return EmojiUnicode(0x1F60A);
+  case EMOJI_SUNGLASSES:
+    return EmojiUnicode(0x1F60E);
+  case EMOJI_THINKING:
+    return EmojiUnicode(0x1F914);
+  case EMOJI_THUMBSDOWN:
+    return EmojiUnicode(0x1F44E);
+  case EMOJI_THUMBSUP:
+    return EmojiUnicode(0x1F44D);
+  case EMOJI_TONGUE:
+    return EmojiUnicode(0x1F61C);
+  case EMOJI_UNICORN:
+    return EmojiUnicode(0x1F984);
+  case EMOJI_VOMIT:
+    return EmojiUnicode(0x1F92E);
+  case EMOJI_WAVE:
+    return EmojiUnicode(0x1F44B);
+  }
+  return EmojiUnicode();
+}
+
+void Emoji::typeEmoji(EmojiUnicode emoji) {
+  kaleidoscope::Unicode::start();
+  kaleidoscope::Unicode::typeCode(emoji.character);
+  if (emoji.variation > 0) {
+    kaleidoscope::Unicode::typeCode(emoji.variation);
+  }
+  kaleidoscope::Unicode::end();
 }
 
 }
