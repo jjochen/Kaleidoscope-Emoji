@@ -44,23 +44,24 @@ KEYMAPS(
                   Key_H, Key_J, Key_K,     Key_L,         Key_Semicolon, Key_Quote,
    Key_RightAlt,  Key_N, Key_M, Key_Comma, Key_Period,    Key_Slash,     Key_Minus,
    Key_RightShift, Key_LeftAlt, Key_Spacebar, Key_RightControl,
-   ShiftToLayer(EMOJI)),
+   ShiftToLayer(EMOJI)
+  ),
 
-
-   [MACROS] =  KEYMAP_STACKED
-   (___, ___, ___, ___, ___, ___, ___,
-    ___, ___, ___, ___, ___, ___, ___,
-    ___, ___, ___, ___, ___, ___,
-    ___, ___, ___, ___, ___, ___, ___,
+  [EMOJI] =  KEYMAP_STACKED
+   (___, Key_EmojiUnicorn, ___,            ___,                 ___,             ___,               ___,
+    ___, ___,              Key_EmojiWave,  Key_EmojiEyes,       Key_EmojiRocket, ___, ___,
+    ___, Key_EmojiAlert,   Key_EmojiSmile, Key_EmojiThumbsDown, Key_EmojiFlower, Key_EmojiGrimace,
+    ___, ___,              Key_EmojiPeach, Key_EmojiCrazy,      Key_EmojiVomit,  Key_EmojiBoom,     ___,
     ___, ___, ___, ___,
     ___,
 
-    ___, ___, ___, ___, ___, ___, ___,
-    ___, ___, ___, ___, ___, ___, ___,
-         ___, ___, ___, ___, ___, ___,
-    ___, ___, ___, ___, ___, ___, ___,
+    ___, ___,             ___,               ___,               ___,                 ___,            ___,
+    ___, ___,             Key_EmojiThumbsUp, Key_EmojiThinking, ___,                 Key_EmojiParty, Key_EmojiCheck,
+         ___,             Key_EmojiJoy,      Key_EmojiKiss,     Key_EmojiSunglasses, ___,            ___,
+    ___, Key_EmojiTongue, Key_EmojiMad,      ___,               ___,                 ___,            ___,
     ___, ___, ___, ___,
-    ___)
+    ___
+  )
 
 	) // KEYMAPS(
 
