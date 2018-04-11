@@ -65,6 +65,8 @@ Emoji::EmojiUnicode Emoji::emojiForKey(Key key) {
     return EmojiUnicode(0x1F60E);
   case EMOJI_FLIRTY:
     return EmojiUnicode(0x1F618);
+  case EMOJI_THINKING:
+    return EmojiUnicode(0x1F914);
   case EMOJI_DISBELIEF:
     return EmojiUnicode(0x1F644);
   case EMOJI_MISCHIEVOUS:
@@ -95,6 +97,10 @@ Emoji::EmojiUnicode Emoji::emojiForKey(Key key) {
     return EmojiUnicode(0x1F596);
   case EMOJI_METAL:
     return EmojiUnicode(0x1F918);
+  case EMOJI_THUMBSUP:
+    return EmojiUnicode(0x1F44D);
+  case EMOJI_THUMBSDOWN:
+    return EmojiUnicode(0x1F44E);
   case EMOJI_WAVE:
     return EmojiUnicode(0x1F44B);
   case EMOJI_EYES:
@@ -103,6 +109,8 @@ Emoji::EmojiUnicode Emoji::emojiForKey(Key key) {
     return EmojiUnicode(0x2764);
   case EMOJI_BOOM:
     return EmojiUnicode(0x1F4A5);
+  case EMOJI_HOLE:
+    return EmojiUnicode(0x1F573);
   case EMOJI_UNICORN_FACE:
     return EmojiUnicode(0x1F984);
   case EMOJI_SNAIL:
@@ -117,6 +125,8 @@ Emoji::EmojiUnicode Emoji::emojiForKey(Key key) {
     return EmojiUnicode(0x1F6A7);
   case EMOJI_ROCKET:
     return EmojiUnicode(0x1F680);
+  case EMOJI_HOURGLASS_FLOWING:
+    return EmojiUnicode(0x23F3);
   case EMOJI_SPARKLES:
     return EmojiUnicode(0x2728);
   case EMOJI_BALLOON:
