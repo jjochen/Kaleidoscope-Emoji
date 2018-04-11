@@ -29,56 +29,82 @@
 
 enum {
   EMOJI_FIRST = kaleidoscope::ranges::KALEIDOSCOPE_SAFE_START,
-  EMOJI_ALERT = EMOJI_FIRST, // ⚠️ (0x26A0, 0xFE0F)
-  EMOJI_BOOM, // 💥 (0x1F4A5)
-  EMOJI_CHECK, // ✅ (0x2705)
-  EMOJI_CRAZY, // 🤪 (0x1F92A)
-  EMOJI_EYES, // 😳 (0x1F633)
-  EMOJI_FLOWER, // 🌻 (0x1F33B)
-  EMOJI_GRIMACE, // 😬 (0x1F62C)
-  EMOJI_JOY, // 😂 (0x1F602)
-  EMOJI_KISS, // 😘 (0x1F618)
-  EMOJI_MAD, // 😤 (0x1F624)
-  EMOJI_PARTY, // 🎉 (0x1F389)
-  EMOJI_PEACH, // 🍑 (0x1F351)
-  EMOJI_PRESENT, // 🎁 (0x1F381)
-  EMOJI_ROCKET, // 🚀 (0x1F680)
-  EMOJI_SMILE, // 😊 (0x1F60A)
-  EMOJI_SUNGLASSES, // 😎 (0x1F60E)
-  EMOJI_THINKING, // 🤔 (0x1F914)
-  EMOJI_THUMBSDOWN, // 👎 (0x1F44E)
-  EMOJI_THUMBSUP, // 👍 (0x1F44D)
-  EMOJI_TONGUE, // 😜 (0x1F61C)
-  EMOJI_UNICORN, // 🦄 (0x1F984)
-  EMOJI_VOMIT, // 🤮 (0x1F92E)
-  EMOJI_WAVE, // 👋 (0x1F44B)
-  EMOJI_LAST = EMOJI_WAVE
+  EMOJI_JOYFUL = EMOJI_FIRST, // 😂 (0x1F602) face with tears of joy
+  EMOJI_SMILE, // 😃 (0x1F603) grinning face with big eyes
+  EMOJI_WINK, // 😉 (0x1F609) winking face
+  EMOJI_BLUSH, // 😊 (0x1F60A) smiling face with smiling eyes
+  EMOJI_CONFIDENT, // 😎 (0x1F60E) smiling face with sunglasses
+  EMOJI_FLIRTY, // 😘 (0x1F618) face blowing a kiss
+  EMOJI_MISCHIEVOUS, // 😜 (0x1F61C) winking face with tongue
+  EMOJI_ANNOYED, // 😤 (0x1F624) face with steam from nose
+  EMOJI_EXPLODING_HEAD, // 🤯 (0x1F92F) exploding head
+  EMOJI_GRIMACED, // 😬 (0x1F62C) grimacing face
+  EMOJI_FLUSHED, // 😳 (0x1F633) flushed face
+  EMOJI_CRAZY, // 🤪 (0x1F92A) zany face
+  EMOJI_VOMITING, // 🤮 (0x1F92E) face vomiting
+  EMOJI_CROSSBONES, // ☠️ (0x2620) skull and crossbones
+  EMOJI_VULCAN, // 🖖 (0x1F596) vulcan salute
+  EMOJI_METAL, // 🤘 (0x1F918) sign of the horns
+  EMOJI_WAVE, // 👋 (0x1F44B) waving hand
+  EMOJI_HEART, // ❤️ (0x2764) red heart
+  EMOJI_BOOM, // 💥 (0x1F4A5) collision
+  EMOJI_UNICORN_FACE, // 🦄 (0x1F984) unicorn face
+  EMOJI_SNAIL, // 🐌 (0x1F40C) snail
+  EMOJI_SUNFLOWER, // 🌻 (0x1F33B) sunflower
+  EMOJI_PEACH, // 🍑 (0x1F351) peach
+  EMOJI_CONSTRUCTION, // 🚧 (0x1F6A7) construction
+  EMOJI_ROCKET, // 🚀 (0x1F680) rocket
+  EMOJI_SPARKLES, // ✨ (0x2728) sparkles
+  EMOJI_BALLOON, // 🎈 (0x1F388) balloon
+  EMOJI_PARTY, // 🎉 (0x1F389) party popper
+  EMOJI_GIFT, // 🎁 (0x1F381) wrapped gift
+  EMOJI_MOBILE, // 📱 (0x1F4F1) mobile phone
+  EMOJI_KEYBOARD, // ⌨️ (0x2328) keyboard
+  EMOJI_ENVELOPE, // ✉️ (0x2709) envelope
+  EMOJI_SHOPPING_CART, // 🛒 (0x1F6D2) shopping cart
+  EMOJI_WARNING, // ⚠️ (0x26A0) warning
+  EMOJI_WHITE_CHECK_MARK, // ✅ (0x2705) white heavy check mark
+  EMOJI_CROSS_MARK, // ❌ (0x274C) cross mark
+  EMOJI_LAST = EMOJI_CROSS_MARK
 };
 
 
-#define Key_EmojiAlert (Key){.raw = EMOJI_ALERT}
-#define Key_EmojiBoom (Key){.raw = EMOJI_BOOM}
-#define Key_EmojiCheck (Key){.raw = EMOJI_CHECK}
-#define Key_EmojiCrazy (Key){.raw = EMOJI_CRAZY}
-#define Key_EmojiEyes (Key){.raw = EMOJI_EYES}
-#define Key_EmojiFlower (Key){.raw = EMOJI_FLOWER}
-#define Key_EmojiGrimace (Key){.raw = EMOJI_GRIMACE}
-#define Key_EmojiJoy (Key){.raw = EMOJI_JOY}
-#define Key_EmojiKiss (Key){.raw = EMOJI_KISS}
-#define Key_EmojiMad (Key){.raw = EMOJI_MAD}
-#define Key_EmojiParty (Key){.raw = EMOJI_PARTY}
-#define Key_EmojiPeach (Key){.raw = EMOJI_PEACH}
-#define Key_EmojiPresent (Key){.raw = EMOJI_PRESENT}
-#define Key_EmojiRocket (Key){.raw = EMOJI_ROCKET}
-#define Key_EmojiSmile (Key){.raw = EMOJI_SMILE}
-#define Key_EmojiSunglasses (Key){.raw = EMOJI_SUNGLASSES}
-#define Key_EmojiThinking (Key){.raw = EMOJI_THINKING}
-#define Key_EmojiThumbsDown (Key){.raw = EMOJI_THUMBSDOWN}
-#define Key_EmojiThumbsUp (Key){.raw = EMOJI_THUMBSUP}
-#define Key_EmojiTongue (Key){.raw = EMOJI_TONGUE}
-#define Key_EmojiUnicorn (Key){.raw = EMOJI_UNICORN}
-#define Key_EmojiVomit (Key){.raw = EMOJI_VOMIT}
-#define Key_EmojiWave (Key){.raw = EMOJI_WAVE}
+#define Key_Joyful (Key){ .raw = EMOJI_JOYFUL }
+#define Key_Smile (Key){ .raw = EMOJI_SMILE }
+#define Key_Wink (Key){ .raw = EMOJI_WINK }
+#define Key_Blush (Key){ .raw = EMOJI_BLUSH }
+#define Key_Confident (Key){ .raw = EMOJI_CONFIDENT }
+#define Key_Flirty (Key){ .raw = EMOJI_FLIRTY }
+#define Key_Mischievous (Key){ .raw = EMOJI_MISCHIEVOUS }
+#define Key_Annoyed (Key){ .raw = EMOJI_ANNOYED }
+#define Key_ExplodingHead (Key){ .raw = EMOJI_EXPLODING_HEAD }
+#define Key_Grimaced (Key){ .raw = EMOJI_GRIMACED }
+#define Key_Flushed (Key){ .raw = EMOJI_FLUSHED }
+#define Key_Crazy (Key){ .raw = EMOJI_CRAZY }
+#define Key_Vomiting (Key){ .raw = EMOJI_VOMITING }
+#define Key_Crossbones (Key){ .raw = EMOJI_CROSSBONES }
+#define Key_Vulcan (Key){ .raw = EMOJI_VULCAN }
+#define Key_Metal (Key){ .raw = EMOJI_METAL }
+#define Key_Wave (Key){ .raw = EMOJI_WAVE }
+#define Key_Heart (Key){ .raw = EMOJI_HEART }
+#define Key_Boom (Key){ .raw = EMOJI_BOOM }
+#define Key_UnicornFace (Key){ .raw = EMOJI_UNICORN_FACE }
+#define Key_Snail (Key){ .raw = EMOJI_SNAIL }
+#define Key_Sunflower (Key){ .raw = EMOJI_SUNFLOWER }
+#define Key_Peach (Key){ .raw = EMOJI_PEACH }
+#define Key_Construction (Key){ .raw = EMOJI_CONSTRUCTION }
+#define Key_Rocket (Key){ .raw = EMOJI_ROCKET }
+#define Key_Sparkles (Key){ .raw = EMOJI_SPARKLES }
+#define Key_Balloon (Key){ .raw = EMOJI_BALLOON }
+#define Key_Party (Key){ .raw = EMOJI_PARTY }
+#define Key_Gift (Key){ .raw = EMOJI_GIFT }
+#define Key_Mobile (Key){ .raw = EMOJI_MOBILE }
+#define Key_Keyboard (Key){ .raw = EMOJI_KEYBOARD }
+#define Key_Envelope (Key){ .raw = EMOJI_ENVELOPE }
+#define Key_ShoppingCart (Key){ .raw = EMOJI_SHOPPING_CART }
+#define Key_Warning (Key){ .raw = EMOJI_WARNING }
+#define Key_WhiteCheckMark (Key){ .raw = EMOJI_WHITE_CHECK_MARK }
+#define Key_CrossMark (Key){ .raw = EMOJI_CROSS_MARK }
 
 
 namespace kaleidoscope {
@@ -96,6 +122,7 @@ class Emoji : public KaleidoscopePlugin {
     EmojiUnicode_() : character(0), variation(0) {}
     EmojiUnicode_(uint32_t c) : character(c), variation(0) {}
     EmojiUnicode_(uint32_t c, uint32_t v) : character(c), variation(v) {}
+    // todo: use uint32_t *characters;
     uint32_t character;
     uint32_t variation;
   } EmojiUnicode;

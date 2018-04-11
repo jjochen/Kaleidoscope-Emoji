@@ -53,52 +53,78 @@ Key Emoji::eventHandlerHook(Key mapped_key, byte row, byte col, uint8_t key_stat
 
 Emoji::EmojiUnicode Emoji::emojiForKey(Key key) {
   switch (key.raw) {
-  case EMOJI_ALERT:
-    return EmojiUnicode(0x26A0, 0xFE0F);
-  case EMOJI_BOOM:
-    return EmojiUnicode(0x1F4A5);
-  case EMOJI_CHECK:
-    return EmojiUnicode(0x2705);
+  case EMOJI_JOYFUL:
+    return EmojiUnicode(0x1F602);
+  case EMOJI_SMILE:
+    return EmojiUnicode(0x1F603);
+  case EMOJI_WINK:
+    return EmojiUnicode(0x1F609);
+  case EMOJI_BLUSH:
+    return EmojiUnicode(0x1F60A);
+  case EMOJI_CONFIDENT:
+    return EmojiUnicode(0x1F60E);
+  case EMOJI_FLIRTY:
+    return EmojiUnicode(0x1F618);
+  case EMOJI_MISCHIEVOUS:
+    return EmojiUnicode(0x1F61C);
+  case EMOJI_ANNOYED:
+    return EmojiUnicode(0x1F624);
+  case EMOJI_EXPLODING_HEAD:
+    return EmojiUnicode(0x1F92F);
+  case EMOJI_GRIMACED:
+    return EmojiUnicode(0x1F62C);
+  case EMOJI_FLUSHED:
+    return EmojiUnicode(0x1F633);
   case EMOJI_CRAZY:
     return EmojiUnicode(0x1F92A);
-  case EMOJI_EYES:
-    return EmojiUnicode(0x1F633);
-  case EMOJI_FLOWER:
-    return EmojiUnicode(0x1F33B);
-  case EMOJI_GRIMACE:
-    return EmojiUnicode(0x1F62C);
-  case EMOJI_JOY:
-    return EmojiUnicode(0x1F602);
-  case EMOJI_KISS:
-    return EmojiUnicode(0x1F618);
-  case EMOJI_MAD:
-    return EmojiUnicode(0x1F624);
-  case EMOJI_PARTY:
-    return EmojiUnicode(0x1F389);
-  case EMOJI_PEACH:
-    return EmojiUnicode(0x1F351);
-  case EMOJI_PRESENT:
-    return EmojiUnicode(0x1F381);
-  case EMOJI_ROCKET:
-    return EmojiUnicode(0x1F680);
-  case EMOJI_SMILE:
-    return EmojiUnicode(0x1F60A);
-  case EMOJI_SUNGLASSES:
-    return EmojiUnicode(0x1F60E);
-  case EMOJI_THINKING:
-    return EmojiUnicode(0x1F914);
-  case EMOJI_THUMBSDOWN:
-    return EmojiUnicode(0x1F44E);
-  case EMOJI_THUMBSUP:
-    return EmojiUnicode(0x1F44D);
-  case EMOJI_TONGUE:
-    return EmojiUnicode(0x1F61C);
-  case EMOJI_UNICORN:
-    return EmojiUnicode(0x1F984);
-  case EMOJI_VOMIT:
+  case EMOJI_VOMITING:
     return EmojiUnicode(0x1F92E);
+  case EMOJI_CROSSBONES:
+    return EmojiUnicode(0x2620);
+  case EMOJI_VULCAN:
+    return EmojiUnicode(0x1F596);
+  case EMOJI_METAL:
+    return EmojiUnicode(0x1F918);
   case EMOJI_WAVE:
     return EmojiUnicode(0x1F44B);
+  case EMOJI_HEART:
+    return EmojiUnicode(0x2764);
+  case EMOJI_BOOM:
+    return EmojiUnicode(0x1F4A5);
+  case EMOJI_UNICORN_FACE:
+    return EmojiUnicode(0x1F984);
+  case EMOJI_SNAIL:
+    return EmojiUnicode(0x1F40C);
+  case EMOJI_SUNFLOWER:
+    return EmojiUnicode(0x1F33B);
+  case EMOJI_PEACH:
+    return EmojiUnicode(0x1F351);
+  case EMOJI_CONSTRUCTION:
+    return EmojiUnicode(0x1F6A7);
+  case EMOJI_ROCKET:
+    return EmojiUnicode(0x1F680);
+  case EMOJI_SPARKLES:
+    return EmojiUnicode(0x2728);
+  case EMOJI_BALLOON:
+    return EmojiUnicode(0x1F388);
+  case EMOJI_PARTY:
+    return EmojiUnicode(0x1F389);
+  case EMOJI_GIFT:
+    return EmojiUnicode(0x1F381);
+  case EMOJI_MOBILE:
+    return EmojiUnicode(0x1F4F1);
+  case EMOJI_KEYBOARD:
+    return EmojiUnicode(0x2328);
+  case EMOJI_ENVELOPE:
+    return EmojiUnicode(0x2709);
+  case EMOJI_SHOPPING_CART:
+    return EmojiUnicode(0x1F6D2);
+  case EMOJI_WARNING:
+    return EmojiUnicode(0x26A0);
+  case EMOJI_WHITE_CHECK_MARK:
+    return EmojiUnicode(0x2705);
+  case EMOJI_CROSS_MARK:
+    return EmojiUnicode(0x274C);
   }
   return EmojiUnicode();
 }
