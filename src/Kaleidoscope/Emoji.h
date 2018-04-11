@@ -35,21 +35,28 @@ enum {
   EMOJI_BLUSH, // 😊 (0x1F60A) smiling face with smiling eyes
   EMOJI_CONFIDENT, // 😎 (0x1F60E) smiling face with sunglasses
   EMOJI_FLIRTY, // 😘 (0x1F618) face blowing a kiss
+  EMOJI_DISBELIEF, // 🙄 (0x1F644) face with rolling eyes
   EMOJI_MISCHIEVOUS, // 😜 (0x1F61C) winking face with tongue
+  EMOJI_UPSIDE_DOWN, // 🙃 (0x1F643) upside-down face
   EMOJI_ANNOYED, // 😤 (0x1F624) face with steam from nose
   EMOJI_EXPLODING_HEAD, // 🤯 (0x1F92F) exploding head
   EMOJI_GRIMACED, // 😬 (0x1F62C) grimacing face
   EMOJI_FLUSHED, // 😳 (0x1F633) flushed face
   EMOJI_CRAZY, // 🤪 (0x1F92A) zany face
+  EMOJI_ILL, // 😷 (0x1F637) face with medical mask
   EMOJI_VOMITING, // 🤮 (0x1F92E) face vomiting
+  EMOJI_NERD, // 🤓 (0x1F913) nerd face
   EMOJI_CROSSBONES, // ☠️ (0x2620) skull and crossbones
+  EMOJI_MAN_DANCING, // 🕺 (0x1F57A) man dancing
   EMOJI_VULCAN, // 🖖 (0x1F596) vulcan salute
   EMOJI_METAL, // 🤘 (0x1F918) sign of the horns
   EMOJI_WAVE, // 👋 (0x1F44B) waving hand
+  EMOJI_EYES, // 👀 (0x1F440) eyes
   EMOJI_HEART, // ❤️ (0x2764) red heart
   EMOJI_BOOM, // 💥 (0x1F4A5) collision
   EMOJI_UNICORN_FACE, // 🦄 (0x1F984) unicorn face
   EMOJI_SNAIL, // 🐌 (0x1F40C) snail
+  EMOJI_CRICKET, // 🦗 (0x1F997) cricket
   EMOJI_SUNFLOWER, // 🌻 (0x1F33B) sunflower
   EMOJI_PEACH, // 🍑 (0x1F351) peach
   EMOJI_CONSTRUCTION, // 🚧 (0x1F6A7) construction
@@ -75,21 +82,28 @@ enum {
 #define Key_Blush (Key){ .raw = EMOJI_BLUSH }
 #define Key_Confident (Key){ .raw = EMOJI_CONFIDENT }
 #define Key_Flirty (Key){ .raw = EMOJI_FLIRTY }
+#define Key_Disbelief (Key){ .raw = EMOJI_DISBELIEF }
 #define Key_Mischievous (Key){ .raw = EMOJI_MISCHIEVOUS }
+#define Key_UpsideDown (Key){ .raw = EMOJI_UPSIDE_DOWN }
 #define Key_Annoyed (Key){ .raw = EMOJI_ANNOYED }
 #define Key_ExplodingHead (Key){ .raw = EMOJI_EXPLODING_HEAD }
 #define Key_Grimaced (Key){ .raw = EMOJI_GRIMACED }
 #define Key_Flushed (Key){ .raw = EMOJI_FLUSHED }
 #define Key_Crazy (Key){ .raw = EMOJI_CRAZY }
+#define Key_Ill (Key){ .raw = EMOJI_ILL }
 #define Key_Vomiting (Key){ .raw = EMOJI_VOMITING }
+#define Key_Nerd (Key){ .raw = EMOJI_NERD }
 #define Key_Crossbones (Key){ .raw = EMOJI_CROSSBONES }
+#define Key_ManDancing (Key){ .raw = EMOJI_MAN_DANCING }
 #define Key_Vulcan (Key){ .raw = EMOJI_VULCAN }
 #define Key_Metal (Key){ .raw = EMOJI_METAL }
 #define Key_Wave (Key){ .raw = EMOJI_WAVE }
+#define Key_Eyes (Key){ .raw = EMOJI_EYES }
 #define Key_Heart (Key){ .raw = EMOJI_HEART }
 #define Key_Boom (Key){ .raw = EMOJI_BOOM }
 #define Key_UnicornFace (Key){ .raw = EMOJI_UNICORN_FACE }
 #define Key_Snail (Key){ .raw = EMOJI_SNAIL }
+#define Key_Cricket (Key){ .raw = EMOJI_CRICKET }
 #define Key_Sunflower (Key){ .raw = EMOJI_SUNFLOWER }
 #define Key_Peach (Key){ .raw = EMOJI_PEACH }
 #define Key_Construction (Key){ .raw = EMOJI_CONSTRUCTION }

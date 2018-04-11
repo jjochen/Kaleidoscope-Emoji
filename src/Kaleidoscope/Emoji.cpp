@@ -65,8 +65,12 @@ Emoji::EmojiUnicode Emoji::emojiForKey(Key key) {
     return EmojiUnicode(0x1F60E);
   case EMOJI_FLIRTY:
     return EmojiUnicode(0x1F618);
+  case EMOJI_DISBELIEF:
+    return EmojiUnicode(0x1F644);
   case EMOJI_MISCHIEVOUS:
     return EmojiUnicode(0x1F61C);
+  case EMOJI_UPSIDE_DOWN:
+    return EmojiUnicode(0x1F643);
   case EMOJI_ANNOYED:
     return EmojiUnicode(0x1F624);
   case EMOJI_EXPLODING_HEAD:
@@ -77,16 +81,24 @@ Emoji::EmojiUnicode Emoji::emojiForKey(Key key) {
     return EmojiUnicode(0x1F633);
   case EMOJI_CRAZY:
     return EmojiUnicode(0x1F92A);
+  case EMOJI_ILL:
+    return EmojiUnicode(0x1F637);
   case EMOJI_VOMITING:
     return EmojiUnicode(0x1F92E);
+  case EMOJI_NERD:
+    return EmojiUnicode(0x1F913);
   case EMOJI_CROSSBONES:
     return EmojiUnicode(0x2620);
+  case EMOJI_MAN_DANCING:
+    return EmojiUnicode(0x1F57A);
   case EMOJI_VULCAN:
     return EmojiUnicode(0x1F596);
   case EMOJI_METAL:
     return EmojiUnicode(0x1F918);
   case EMOJI_WAVE:
     return EmojiUnicode(0x1F44B);
+  case EMOJI_EYES:
+    return EmojiUnicode(0x1F440);
   case EMOJI_HEART:
     return EmojiUnicode(0x2764);
   case EMOJI_BOOM:
@@ -95,6 +107,8 @@ Emoji::EmojiUnicode Emoji::emojiForKey(Key key) {
     return EmojiUnicode(0x1F984);
   case EMOJI_SNAIL:
     return EmojiUnicode(0x1F40C);
+  case EMOJI_CRICKET:
+    return EmojiUnicode(0x1F997);
   case EMOJI_SUNFLOWER:
     return EmojiUnicode(0x1F33B);
   case EMOJI_PEACH:
