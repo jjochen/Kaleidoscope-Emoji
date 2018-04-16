@@ -45,29 +45,54 @@ void setup (){
 
 ### Emoji Keys
 
-  * ⚠️ Key_EmojiAlert
-  * 💥 Key_EmojiBoom
-  * ✅ Key_EmojiCheck
-  * 🤪 Key_EmojiCrazy
-  * 😳 Key_EmojiEyes
-  * 🌻 Key_EmojiFlower
-  * 😬 Key_EmojiGrimace
-  * 😂 Key_EmojiJoy
-  * 😘 Key_EmojiKiss
-  * 😤 Key_EmojiMad
-  * 🎉 Key_EmojiParty
-  * 🍑 Key_EmojiPeach
-  * 🎁 Key_EmojiPresent
-  * 🚀 Key_EmojiRocket
-  * 😊 Key_EmojiSmile
-  * 😎 Key_EmojiSunglasses
+  * 😂 Key_EmojiJoyful
+  * 😃 Key_EmojiSmile
+  * 😉 Key_EmojiWink
+  * 😊 Key_EmojiBlush
+  * 😎 Key_EmojiConfident
+  * 😘 Key_EmojiFlirty
   * 🤔 Key_EmojiThinking
-  * 👎 Key_EmojiThumbsDown
-  * 👍 Key_EmojiThumbsUp
-  * 😜 Key_EmojiTongue
-  * 🦄 Key_EmojiUnicorn
-  * 🤮 Key_EmojiVomit
+  * 🙄 Key_EmojiDisbelief
+  * 😜 Key_EmojiMischievous
+  * 🙃 Key_EmojiUpsideDown
+  * 😤 Key_EmojiAnnoyed
+  * 🤯 Key_EmojiExplodingHead
+  * 😬 Key_EmojiGrimaced
+  * 😳 Key_EmojiFlushed
+  * 🤪 Key_EmojiCrazy
+  * 😷 Key_EmojiIll
+  * 🤮 Key_EmojiVomiting
+  * 🤓 Key_EmojiNerd
+  * ☠️ Key_EmojiCrossbones
+  * 🕺 Key_EmojiManDancing
+  * 🖖 Key_EmojiVulcan
+  * 🤘 Key_EmojiMetal
+  * 👍️ Key_EmojiThumbsup
+  * 👎️ Key_EmojiThumbsdown
   * 👋 Key_EmojiWave
+  * 👀 Key_EmojiEyes
+  * ❤️ Key_EmojiHeart
+  * 💥 Key_EmojiBoom
+  * 🕳️ Key_EmojiHole
+  * 🦄 Key_EmojiUnicornFace
+  * 🐌 Key_EmojiSnail
+  * 🦗 Key_EmojiCricket
+  * 🌻 Key_EmojiSunflower
+  * 🍑 Key_EmojiPeach
+  * 🚧 Key_EmojiConstruction
+  * 🚀 Key_EmojiRocket
+  * ⏳️ Key_EmojiHourglassFlowing
+  * ✨ Key_EmojiSparkles
+  * 🎈 Key_EmojiBalloon
+  * 🎉 Key_EmojiParty
+  * 🎁 Key_EmojiGift
+  * 📱 Key_EmojiMobile
+  * ⌨️ Key_EmojiKeyboard
+  * ✉️ Key_EmojiEnvelope
+  * 🛒 Key_EmojiShoppingCart
+  * ⚠️ Key_EmojiWarning
+  * ✅ Key_EmojiWhiteCheckMark
+  * ❌ Key_EmojiCrossMark
 
 
 ## Dependencies

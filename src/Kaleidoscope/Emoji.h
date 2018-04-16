@@ -27,8 +27,61 @@
 #include <Kaleidoscope.h>
 #include <Kaleidoscope-Ranges.h>
 
+#define EMOJI_KEY(n) (Key){ .raw = kaleidoscope::n }
+#define Key_EmojiJoyful EMOJI_KEY(EMOJI_JOYFUL) // 😂 (0x1F602) face with tears of joy
+#define Key_EmojiSmile EMOJI_KEY(EMOJI_SMILE) // 😃 (0x1F603) grinning face with big eyes
+#define Key_EmojiWink EMOJI_KEY(EMOJI_WINK) // 😉 (0x1F609) winking face
+#define Key_EmojiBlush EMOJI_KEY(EMOJI_BLUSH) // 😊 (0x1F60A) smiling face with smiling eyes
+#define Key_EmojiConfident EMOJI_KEY(EMOJI_CONFIDENT) // 😎 (0x1F60E) smiling face with sunglasses
+#define Key_EmojiFlirty EMOJI_KEY(EMOJI_FLIRTY) // 😘 (0x1F618) face blowing a kiss
+#define Key_EmojiThinking EMOJI_KEY(EMOJI_THINKING) // 🤔 (0x1F914) thinking face
+#define Key_EmojiDisbelief EMOJI_KEY(EMOJI_DISBELIEF) // 🙄 (0x1F644) face with rolling eyes
+#define Key_EmojiMischievous EMOJI_KEY(EMOJI_MISCHIEVOUS) // 😜 (0x1F61C) winking face with tongue
+#define Key_EmojiUpsideDown EMOJI_KEY(EMOJI_UPSIDE_DOWN) // 🙃 (0x1F643) upside-down face
+#define Key_EmojiAnnoyed EMOJI_KEY(EMOJI_ANNOYED) // 😤 (0x1F624) face with steam from nose
+#define Key_EmojiExplodingHead EMOJI_KEY(EMOJI_EXPLODING_HEAD) // 🤯 (0x1F92F) exploding head
+#define Key_EmojiGrimaced EMOJI_KEY(EMOJI_GRIMACED) // 😬 (0x1F62C) grimacing face
+#define Key_EmojiFlushed EMOJI_KEY(EMOJI_FLUSHED) // 😳 (0x1F633) flushed face
+#define Key_EmojiCrazy EMOJI_KEY(EMOJI_CRAZY) // 🤪 (0x1F92A) zany face
+#define Key_EmojiIll EMOJI_KEY(EMOJI_ILL) // 😷 (0x1F637) face with medical mask
+#define Key_EmojiVomiting EMOJI_KEY(EMOJI_VOMITING) // 🤮 (0x1F92E) face vomiting
+#define Key_EmojiNerd EMOJI_KEY(EMOJI_NERD) // 🤓 (0x1F913) nerd face
+#define Key_EmojiCrossbones EMOJI_KEY(EMOJI_CROSSBONES) // ☠️ (0x2620) skull and crossbones
+#define Key_EmojiManDancing EMOJI_KEY(EMOJI_MAN_DANCING) // 🕺 (0x1F57A) man dancing
+#define Key_EmojiVulcan EMOJI_KEY(EMOJI_VULCAN) // 🖖 (0x1F596) vulcan salute
+#define Key_EmojiMetal EMOJI_KEY(EMOJI_METAL) // 🤘 (0x1F918) sign of the horns
+#define Key_EmojiThumbsup EMOJI_KEY(EMOJI_THUMBSUP) // 👍️ (0x1F44D) thumbs up
+#define Key_EmojiThumbsdown EMOJI_KEY(EMOJI_THUMBSDOWN) // 👎️ (0x1F44E) thumbs down
+#define Key_EmojiWave EMOJI_KEY(EMOJI_WAVE) // 👋 (0x1F44B) waving hand
+#define Key_EmojiEyes EMOJI_KEY(EMOJI_EYES) // 👀 (0x1F440) eyes
+#define Key_EmojiHeart EMOJI_KEY(EMOJI_HEART) // ❤️ (0x2764) red heart
+#define Key_EmojiBoom EMOJI_KEY(EMOJI_BOOM) // 💥 (0x1F4A5) collision
+#define Key_EmojiHole EMOJI_KEY(EMOJI_HOLE) // 🕳️ (0x1F573) hole
+#define Key_EmojiUnicornFace EMOJI_KEY(EMOJI_UNICORN_FACE) // 🦄 (0x1F984) unicorn face
+#define Key_EmojiSnail EMOJI_KEY(EMOJI_SNAIL) // 🐌 (0x1F40C) snail
+#define Key_EmojiCricket EMOJI_KEY(EMOJI_CRICKET) // 🦗 (0x1F997) cricket
+#define Key_EmojiSunflower EMOJI_KEY(EMOJI_SUNFLOWER) // 🌻 (0x1F33B) sunflower
+#define Key_EmojiPeach EMOJI_KEY(EMOJI_PEACH) // 🍑 (0x1F351) peach
+#define Key_EmojiConstruction EMOJI_KEY(EMOJI_CONSTRUCTION) // 🚧 (0x1F6A7) construction
+#define Key_EmojiRocket EMOJI_KEY(EMOJI_ROCKET) // 🚀 (0x1F680) rocket
+#define Key_EmojiHourglassFlowing EMOJI_KEY(EMOJI_HOURGLASS_FLOWING) // ⏳️ (0x23F3) hourglass not done
+#define Key_EmojiSparkles EMOJI_KEY(EMOJI_SPARKLES) // ✨ (0x2728) sparkles
+#define Key_EmojiBalloon EMOJI_KEY(EMOJI_BALLOON) // 🎈 (0x1F388) balloon
+#define Key_EmojiParty EMOJI_KEY(EMOJI_PARTY) // 🎉 (0x1F389) party popper
+#define Key_EmojiGift EMOJI_KEY(EMOJI_GIFT) // 🎁 (0x1F381) wrapped gift
+#define Key_EmojiMobile EMOJI_KEY(EMOJI_MOBILE) // 📱 (0x1F4F1) mobile phone
+#define Key_EmojiKeyboard EMOJI_KEY(EMOJI_KEYBOARD) // ⌨️ (0x2328) keyboard
+#define Key_EmojiEnvelope EMOJI_KEY(EMOJI_ENVELOPE) // ✉️ (0x2709) envelope
+#define Key_EmojiShoppingCart EMOJI_KEY(EMOJI_SHOPPING_CART) // 🛒 (0x1F6D2) shopping cart
+#define Key_EmojiWarning EMOJI_KEY(EMOJI_WARNING) // ⚠️ (0x26A0) warning
+#define Key_EmojiWhiteCheckMark EMOJI_KEY(EMOJI_WHITE_CHECK_MARK) // ✅ (0x2705) white heavy check mark
+#define Key_EmojiCrossMark EMOJI_KEY(EMOJI_CROSS_MARK) // ❌ (0x274C) cross mark
+
+
+namespace kaleidoscope {
+
 enum {
-  EMOJI_FIRST = kaleidoscope::ranges::KALEIDOSCOPE_SAFE_START,
+  EMOJI_FIRST = kaleidoscope::ranges::EMOJI_FIRST,
   EMOJI_JOYFUL = EMOJI_FIRST,
   EMOJI_SMILE,
   EMOJI_WINK,
@@ -79,59 +132,6 @@ enum {
   EMOJI_CROSS_MARK,
   EMOJI_LAST = EMOJI_CROSS_MARK
 };
-
-
-#define Key_EmojiJoyful (Key){ .raw = EMOJI_JOYFUL } // 😂 (0x1F602) face with tears of joy
-#define Key_EmojiSmile (Key){ .raw = EMOJI_SMILE } // 😃 (0x1F603) grinning face with big eyes
-#define Key_EmojiWink (Key){ .raw = EMOJI_WINK } // 😉 (0x1F609) winking face
-#define Key_EmojiBlush (Key){ .raw = EMOJI_BLUSH } // 😊 (0x1F60A) smiling face with smiling eyes
-#define Key_EmojiConfident (Key){ .raw = EMOJI_CONFIDENT } // 😎 (0x1F60E) smiling face with sunglasses
-#define Key_EmojiFlirty (Key){ .raw = EMOJI_FLIRTY } // 😘 (0x1F618) face blowing a kiss
-#define Key_EmojiThinking (Key){ .raw = EMOJI_THINKING } // 🤔 (0x1F914) thinking face
-#define Key_EmojiDisbelief (Key){ .raw = EMOJI_DISBELIEF } // 🙄 (0x1F644) face with rolling eyes
-#define Key_EmojiMischievous (Key){ .raw = EMOJI_MISCHIEVOUS } // 😜 (0x1F61C) winking face with tongue
-#define Key_EmojiUpsideDown (Key){ .raw = EMOJI_UPSIDE_DOWN } // 🙃 (0x1F643) upside-down face
-#define Key_EmojiAnnoyed (Key){ .raw = EMOJI_ANNOYED } // 😤 (0x1F624) face with steam from nose
-#define Key_EmojiExplodingHead (Key){ .raw = EMOJI_EXPLODING_HEAD } // 🤯 (0x1F92F) exploding head
-#define Key_EmojiGrimaced (Key){ .raw = EMOJI_GRIMACED } // 😬 (0x1F62C) grimacing face
-#define Key_EmojiFlushed (Key){ .raw = EMOJI_FLUSHED } // 😳 (0x1F633) flushed face
-#define Key_EmojiCrazy (Key){ .raw = EMOJI_CRAZY } // 🤪 (0x1F92A) zany face
-#define Key_EmojiIll (Key){ .raw = EMOJI_ILL } // 😷 (0x1F637) face with medical mask
-#define Key_EmojiVomiting (Key){ .raw = EMOJI_VOMITING } // 🤮 (0x1F92E) face vomiting
-#define Key_EmojiNerd (Key){ .raw = EMOJI_NERD } // 🤓 (0x1F913) nerd face
-#define Key_EmojiCrossbones (Key){ .raw = EMOJI_CROSSBONES } // ☠️ (0x2620) skull and crossbones
-#define Key_EmojiManDancing (Key){ .raw = EMOJI_MAN_DANCING } // 🕺 (0x1F57A) man dancing
-#define Key_EmojiVulcan (Key){ .raw = EMOJI_VULCAN } // 🖖 (0x1F596) vulcan salute
-#define Key_EmojiMetal (Key){ .raw = EMOJI_METAL } // 🤘 (0x1F918) sign of the horns
-#define Key_EmojiThumbsup (Key){ .raw = EMOJI_THUMBSUP } // 👍️ (0x1F44D) thumbs up
-#define Key_EmojiThumbsdown (Key){ .raw = EMOJI_THUMBSDOWN } // 👎️ (0x1F44E) thumbs down
-#define Key_EmojiWave (Key){ .raw = EMOJI_WAVE } // 👋 (0x1F44B) waving hand
-#define Key_EmojiEyes (Key){ .raw = EMOJI_EYES } // 👀 (0x1F440) eyes
-#define Key_EmojiHeart (Key){ .raw = EMOJI_HEART } // ❤️ (0x2764) red heart
-#define Key_EmojiBoom (Key){ .raw = EMOJI_BOOM } // 💥 (0x1F4A5) collision
-#define Key_EmojiHole (Key){ .raw = EMOJI_HOLE } // 🕳️ (0x1F573) hole
-#define Key_EmojiUnicornFace (Key){ .raw = EMOJI_UNICORN_FACE } // 🦄 (0x1F984) unicorn face
-#define Key_EmojiSnail (Key){ .raw = EMOJI_SNAIL } // 🐌 (0x1F40C) snail
-#define Key_EmojiCricket (Key){ .raw = EMOJI_CRICKET } // 🦗 (0x1F997) cricket
-#define Key_EmojiSunflower (Key){ .raw = EMOJI_SUNFLOWER } // 🌻 (0x1F33B) sunflower
-#define Key_EmojiPeach (Key){ .raw = EMOJI_PEACH } // 🍑 (0x1F351) peach
-#define Key_EmojiConstruction (Key){ .raw = EMOJI_CONSTRUCTION } // 🚧 (0x1F6A7) construction
-#define Key_EmojiRocket (Key){ .raw = EMOJI_ROCKET } // 🚀 (0x1F680) rocket
-#define Key_EmojiHourglassFlowing (Key){ .raw = EMOJI_HOURGLASS_FLOWING } // ⏳️ (0x23F3) hourglass not done
-#define Key_EmojiSparkles (Key){ .raw = EMOJI_SPARKLES } // ✨ (0x2728) sparkles
-#define Key_EmojiBalloon (Key){ .raw = EMOJI_BALLOON } // 🎈 (0x1F388) balloon
-#define Key_EmojiParty (Key){ .raw = EMOJI_PARTY } // 🎉 (0x1F389) party popper
-#define Key_EmojiGift (Key){ .raw = EMOJI_GIFT } // 🎁 (0x1F381) wrapped gift
-#define Key_EmojiMobile (Key){ .raw = EMOJI_MOBILE } // 📱 (0x1F4F1) mobile phone
-#define Key_EmojiKeyboard (Key){ .raw = EMOJI_KEYBOARD } // ⌨️ (0x2328) keyboard
-#define Key_EmojiEnvelope (Key){ .raw = EMOJI_ENVELOPE } // ✉️ (0x2709) envelope
-#define Key_EmojiShoppingCart (Key){ .raw = EMOJI_SHOPPING_CART } // 🛒 (0x1F6D2) shopping cart
-#define Key_EmojiWarning (Key){ .raw = EMOJI_WARNING } // ⚠️ (0x26A0) warning
-#define Key_EmojiWhiteCheckMark (Key){ .raw = EMOJI_WHITE_CHECK_MARK } // ✅ (0x2705) white heavy check mark
-#define Key_EmojiCrossMark (Key){ .raw = EMOJI_CROSS_MARK } // ❌ (0x274C) cross mark
-
-
-namespace kaleidoscope {
 
 class Emoji : public KaleidoscopePlugin {
  public:
