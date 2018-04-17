@@ -154,14 +154,21 @@ Emoji::EmojiUnicode Emoji::emojiForKey(Key key) {
 }
 
 void Emoji::typeEmoji(EmojiUnicode emoji) {
+  emojiEventHook(TypingWillStart);
+
   kaleidoscope::Unicode::start();
   kaleidoscope::Unicode::typeCode(emoji.character);
   if (emoji.variation > 0) {
     kaleidoscope::Unicode::typeCode(emoji.variation);
   }
   kaleidoscope::Unicode::end();
+
+  emojiEventHook(TypingDidFinish);
 }
 
+}
+
+__attribute__((weak)) void emojiEventHook(kaleidoscope::Emoji::Event event) {
 }
 
 kaleidoscope::Emoji Emoji;
