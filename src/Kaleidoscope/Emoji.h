@@ -135,11 +135,6 @@ enum {
 
 class Emoji : public KaleidoscopePlugin {
  public:
-  typedef enum {
-    TypingWillStart,
-    TypingDidFinish
-  } Event;
-
   Emoji(void);
 
   void begin(void) final;
@@ -162,6 +157,7 @@ class Emoji : public KaleidoscopePlugin {
 
 }
 
-void emojiEventHook(kaleidoscope::Emoji::Event event);
+void emojiTypingWillStart();
+void emojiTypingDidFinish();
 
 extern kaleidoscope::Emoji Emoji;

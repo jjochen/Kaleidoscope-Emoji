@@ -154,21 +154,23 @@ Emoji::EmojiUnicode Emoji::emojiForKey(Key key) {
 }
 
 void Emoji::typeEmoji(EmojiUnicode emoji) {
-  emojiEventHook(TypingWillStart);
+  emojiTypingWillStart();
 
-  kaleidoscope::Unicode::start();
-  kaleidoscope::Unicode::typeCode(emoji.character);
+  Unicode::start();
+  Unicode::typeCode(emoji.character);
   if (emoji.variation > 0) {
-    kaleidoscope::Unicode::typeCode(emoji.variation);
+    Unicode::typeCode(emoji.variation);
   }
-  kaleidoscope::Unicode::end();
+  Unicode::end();
 
-  emojiEventHook(TypingDidFinish);
+  emojiTypingDidFinish();
 }
 
 }
 
-__attribute__((weak)) void emojiEventHook(kaleidoscope::Emoji::Event event) {
+__attribute__((weak)) void emojiTypingWillStart() {
+}
+__attribute__((weak)) void emojiTypingDidFinish() {
 }
 
 kaleidoscope::Emoji Emoji;
