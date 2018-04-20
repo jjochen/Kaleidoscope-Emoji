@@ -45,128 +45,130 @@ Key Emoji::eventHandlerHook(Key mapped_key, byte row, byte col, uint8_t key_stat
     return Key_NoKey;
   }
 
-  EmojiUnicode emoji = emojiForKey(mapped_key);
-  typeEmoji(emoji);
+  typeEmojiUnicodeForKey(mapped_key);
 
   return Key_NoKey;
 }
 
-Emoji::EmojiUnicode Emoji::emojiForKey(Key key) {
+void Emoji::typeEmojiUnicodeForKey(Key key) {
   switch (key.raw) {
   case EMOJI_JOYFUL:
-    return EmojiUnicode(0x1F602);
+    typeEmojiUnicodeCharacter(0x1F602);
   case EMOJI_SMILE:
-    return EmojiUnicode(0x1F603);
+    typeEmojiUnicodeCharacter(0x1F603);
   case EMOJI_WINK:
-    return EmojiUnicode(0x1F609);
+    typeEmojiUnicodeCharacter(0x1F609);
   case EMOJI_BLUSH:
-    return EmojiUnicode(0x1F60A);
+    typeEmojiUnicodeCharacter(0x1F60A);
   case EMOJI_CONFIDENT:
-    return EmojiUnicode(0x1F60E);
+    typeEmojiUnicodeCharacter(0x1F60E);
   case EMOJI_FLIRTY:
-    return EmojiUnicode(0x1F618);
+    typeEmojiUnicodeCharacter(0x1F618);
   case EMOJI_THINKING:
-    return EmojiUnicode(0x1F914);
+    typeEmojiUnicodeCharacter(0x1F914);
   case EMOJI_DISBELIEF:
-    return EmojiUnicode(0x1F644);
+    typeEmojiUnicodeCharacter(0x1F644);
   case EMOJI_MISCHIEVOUS:
-    return EmojiUnicode(0x1F61C);
+    typeEmojiUnicodeCharacter(0x1F61C);
   case EMOJI_UPSIDE_DOWN:
-    return EmojiUnicode(0x1F643);
+    typeEmojiUnicodeCharacter(0x1F643);
   case EMOJI_ANNOYED:
-    return EmojiUnicode(0x1F624);
+    typeEmojiUnicodeCharacter(0x1F624);
   case EMOJI_EXPLODING_HEAD:
-    return EmojiUnicode(0x1F92F);
+    typeEmojiUnicodeCharacter(0x1F92F);
   case EMOJI_GRIMACED:
-    return EmojiUnicode(0x1F62C);
+    typeEmojiUnicodeCharacter(0x1F62C);
   case EMOJI_FLUSHED:
-    return EmojiUnicode(0x1F633);
+    typeEmojiUnicodeCharacter(0x1F633);
   case EMOJI_CRAZY:
-    return EmojiUnicode(0x1F92A);
+    typeEmojiUnicodeCharacter(0x1F92A);
   case EMOJI_ILL:
-    return EmojiUnicode(0x1F637);
+    typeEmojiUnicodeCharacter(0x1F637);
   case EMOJI_VOMITING:
-    return EmojiUnicode(0x1F92E);
+    typeEmojiUnicodeCharacter(0x1F92E);
   case EMOJI_NERD:
-    return EmojiUnicode(0x1F913);
+    typeEmojiUnicodeCharacter(0x1F913);
   case EMOJI_CROSSBONES:
-    return EmojiUnicode(0x2620);
+    typeEmojiUnicodeCharacter(0x2620);
   case EMOJI_MAN_DANCING:
-    return EmojiUnicode(0x1F57A);
+    typeEmojiUnicodeCharacter(0x1F57A);
   case EMOJI_VULCAN:
-    return EmojiUnicode(0x1F596);
+    typeEmojiUnicodeCharacter(0x1F596);
   case EMOJI_METAL:
-    return EmojiUnicode(0x1F918);
+    typeEmojiUnicodeCharacter(0x1F918);
   case EMOJI_THUMBSUP:
-    return EmojiUnicode(0x1F44D);
+    typeEmojiUnicodeCharacter(0x1F44D);
   case EMOJI_THUMBSDOWN:
-    return EmojiUnicode(0x1F44E);
+    typeEmojiUnicodeCharacter(0x1F44E);
   case EMOJI_WAVE:
-    return EmojiUnicode(0x1F44B);
+    typeEmojiUnicodeCharacter(0x1F44B);
   case EMOJI_EYES:
-    return EmojiUnicode(0x1F440);
+    typeEmojiUnicodeCharacter(0x1F440);
   case EMOJI_HEART:
-    return EmojiUnicode(0x2764);
+    typeEmojiUnicodeCharacter(0x2764);
   case EMOJI_BOOM:
-    return EmojiUnicode(0x1F4A5);
+    typeEmojiUnicodeCharacter(0x1F4A5);
   case EMOJI_HOLE:
-    return EmojiUnicode(0x1F573);
+    typeEmojiUnicodeCharacter(0x1F573);
   case EMOJI_UNICORN_FACE:
-    return EmojiUnicode(0x1F984);
+    typeEmojiUnicodeCharacter(0x1F984);
   case EMOJI_SNAIL:
-    return EmojiUnicode(0x1F40C);
+    typeEmojiUnicodeCharacter(0x1F40C);
   case EMOJI_CRICKET:
-    return EmojiUnicode(0x1F997);
+    typeEmojiUnicodeCharacter(0x1F997);
   case EMOJI_SUNFLOWER:
-    return EmojiUnicode(0x1F33B);
+    typeEmojiUnicodeCharacter(0x1F33B);
   case EMOJI_PEACH:
-    return EmojiUnicode(0x1F351);
+    typeEmojiUnicodeCharacter(0x1F351);
   case EMOJI_CONSTRUCTION:
-    return EmojiUnicode(0x1F6A7);
+    typeEmojiUnicodeCharacter(0x1F6A7);
   case EMOJI_ROCKET:
-    return EmojiUnicode(0x1F680);
+    typeEmojiUnicodeCharacter(0x1F680);
   case EMOJI_HOURGLASS_FLOWING:
-    return EmojiUnicode(0x23F3);
+    typeEmojiUnicodeCharacter(0x23F3);
   case EMOJI_SPARKLES:
-    return EmojiUnicode(0x2728);
+    typeEmojiUnicodeCharacter(0x2728);
   case EMOJI_BALLOON:
-    return EmojiUnicode(0x1F388);
+    typeEmojiUnicodeCharacter(0x1F388);
   case EMOJI_PARTY:
-    return EmojiUnicode(0x1F389);
+    typeEmojiUnicodeCharacter(0x1F389);
   case EMOJI_GIFT:
-    return EmojiUnicode(0x1F381);
+    typeEmojiUnicodeCharacter(0x1F381);
   case EMOJI_MOBILE:
-    return EmojiUnicode(0x1F4F1);
+    typeEmojiUnicodeCharacter(0x1F4F1);
   case EMOJI_KEYBOARD:
-    return EmojiUnicode(0x2328);
+    typeEmojiUnicodeCharacter(0x2328);
   case EMOJI_ENVELOPE:
-    return EmojiUnicode(0x2709);
+    typeEmojiUnicodeCharacter(0x2709);
   case EMOJI_SHOPPING_CART:
-    return EmojiUnicode(0x1F6D2);
+    typeEmojiUnicodeCharacter(0x1F6D2);
   case EMOJI_WARNING:
-    return EmojiUnicode(0x26A0);
+    typeEmojiUnicodeCharacter(0x26A0);
   case EMOJI_WHITE_CHECK_MARK:
-    return EmojiUnicode(0x2705);
+    typeEmojiUnicodeCharacter(0x2705);
   case EMOJI_CROSS_MARK:
-    return EmojiUnicode(0x274C);
+    typeEmojiUnicodeCharacter(0x274C);
   }
-  return EmojiUnicode();
 }
 
-void Emoji::typeEmoji(EmojiUnicode emoji) {
+void Emoji::typeEmojiUnicodeCharacter(uint32_t character) {
+  uint32_t sequence[1] = {character};
+  typeEmojiUnicodeSequence(sequence, 1);
+}
+
+void Emoji::typeEmojiUnicodeSequence(uint32_t sequence[], size_t size) {
   emojiTypingWillStart();
-
   Unicode::start();
-  Unicode::typeCode(emoji.character);
-  if (emoji.variation > 0) {
-    Unicode::typeCode(emoji.variation);
-  }
-  Unicode::end();
 
+  for (uint8_t i = 0; i < size; i++) {
+    Unicode::typeCode(sequence[i]);
+  }
+
+  Unicode::end();
   emojiTypingDidFinish();
 }
 
-}
+} // namespace kaleidoscope
 
 __attribute__((weak)) void emojiTypingWillStart() {
 }

@@ -142,17 +142,9 @@ class Emoji : public KaleidoscopePlugin {
  private:
   static Key eventHandlerHook(Key mapped_key, byte row, byte col, uint8_t key_state);
 
-  typedef struct EmojiUnicode_ {
-    EmojiUnicode_() : character(0), variation(0) {}
-    EmojiUnicode_(uint32_t c) : character(c), variation(0) {}
-    EmojiUnicode_(uint32_t c, uint32_t v) : character(c), variation(v) {}
-    // todo: use uint32_t *characters;
-    uint32_t character;
-    uint32_t variation;
-  } EmojiUnicode;
-
-  static EmojiUnicode emojiForKey(Key key);
-  static void typeEmoji(EmojiUnicode emoji);
+  static void typeEmojiUnicodeForKey(Key key);
+  static void typeEmojiUnicodeCharacter(uint32_t character);
+  static void typeEmojiUnicodeSequence(uint32_t sequence[], size_t size);
 };
 
 }
