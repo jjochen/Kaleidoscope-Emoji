@@ -43,9 +43,11 @@ EventHandlerResult Emoji::onKeyswitchEvent(Key &mapped_key, byte row, byte col, 
     return EventHandlerResult::OK;
   }
 
-  if (keyToggledOn(keyState)) {
-    typeEmojiUnicodeForKey(mapped_key);
+  if (!keyToggledOn(keyState)) {
+    return EventHandlerResult::EVENT_CONSUMED;
   }
+
+  typeEmojiUnicodeForKey(mapped_key);
 
   return EventHandlerResult::EVENT_CONSUMED;
 }
