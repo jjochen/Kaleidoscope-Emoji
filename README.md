@@ -37,10 +37,8 @@ the plugin, and place the `Key_Emoji...` keys in your keymap.
 #include <Kaleidoscope.h>
 #include <Kaleidoscope-Emoji.h>
 
-void setup (){
-  Kaleidoscope.use(&Emoji);
-  Kaleidoscope.setup();
-}
+
+KALEIDOSCOPE_INIT_PLUGINS(Emoji);
 ```
 
 ### Emoji Keys

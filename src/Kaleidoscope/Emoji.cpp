@@ -25,32 +25,35 @@
 #include <Kaleidoscope-Emoji.h>
 #include <Kaleidoscope-Unicode.h>
 
+namespace kaleidoscope {
+namespace {
+
+static void typeEmojiUnicodeForKey(Key key);
+static void typeEmojiUnicodeCharacter(uint32_t character);
+static void typeEmojiUnicodeSequence(uint32_t sequence[], size_t size);
+
+} // namespace
+} // namespace kaleidoscope
+
 
 namespace kaleidoscope {
 
-Emoji::Emoji(void) {
-
-}
-
-void Emoji::begin(void) {
-  Kaleidoscope.useEventHandlerHook(eventHandlerHook);
-}
-
-Key Emoji::eventHandlerHook(Key mapped_key, byte row, byte col, uint8_t key_state) {
+EventHandlerResult Emoji::onKeyswitchEvent(Key &mapped_key, byte row, byte col, uint8_t keyState) {
   if (mapped_key.raw < EMOJI_FIRST || mapped_key.raw > EMOJI_LAST) {
-    return mapped_key;
+    return EventHandlerResult::OK;
   }
 
-  if (!keyToggledOn(key_state)) {
-    return Key_NoKey;
+  if (keyToggledOn(keyState)) {
+    typeEmojiUnicodeForKey(mapped_key);
   }
 
-  typeEmojiUnicodeForKey(mapped_key);
-
-  return Key_NoKey;
+  return EventHandlerResult::EVENT_CONSUMED;
 }
 
-void Emoji::typeEmojiUnicodeForKey(Key key) {
+
+namespace {
+
+void typeEmojiUnicodeForKey(Key key) {
   switch (key.raw) {
   case EMOJI_JOYFUL:
     typeEmojiUnicodeCharacter(0x1F602);
@@ -151,12 +154,12 @@ void Emoji::typeEmojiUnicodeForKey(Key key) {
   }
 }
 
-void Emoji::typeEmojiUnicodeCharacter(uint32_t character) {
+void typeEmojiUnicodeCharacter(uint32_t character) {
   uint32_t sequence[1] = {character};
   typeEmojiUnicodeSequence(sequence, 1);
 }
 
-void Emoji::typeEmojiUnicodeSequence(uint32_t sequence[], size_t size) {
+void typeEmojiUnicodeSequence(uint32_t sequence[], size_t size) {
   emojiTypingWillStart();
   Unicode::start();
 
@@ -168,6 +171,7 @@ void Emoji::typeEmojiUnicodeSequence(uint32_t sequence[], size_t size) {
   emojiTypingDidFinish();
 }
 
+} // namespace
 } // namespace kaleidoscope
 
 __attribute__((weak)) void emojiTypingWillStart() {

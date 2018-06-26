@@ -66,8 +66,9 @@ KEYMAPS(
 
 // *INDENT-ON*
 
+KALEIDOSCOPE_INIT_PLUGINS(Emoji);
+
 void setup() {
-  Kaleidoscope.use(&Emoji);
   Kaleidoscope.setup();
 }
 
