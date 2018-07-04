@@ -29,7 +29,6 @@ namespace kaleidoscope {
 namespace {
 
 static void typeEmojiUnicodeForKey(Key key);
-static void typeEmojiUnicodeCharacter(uint32_t character);
 static void typeEmojiUnicodeSequence(uint32_t sequence[], size_t size);
 
 } // namespace
@@ -56,168 +55,214 @@ EventHandlerResult Emoji::onKeyswitchEvent(Key &mapped_key, byte row, byte col, 
 namespace {
 
 void typeEmojiUnicodeForKey(Key key) {
-  switch (key.raw) {    
-  case EMOJI_JOYFUL:
-    typeEmojiUnicodeCharacter(0x1F602);    
-    break;
-  case EMOJI_SMILE:
-    typeEmojiUnicodeCharacter(0x1F603);    
-    break;
-  case EMOJI_WINK:
-    typeEmojiUnicodeCharacter(0x1F609);    
-    break;
-  case EMOJI_BLUSH:
-    typeEmojiUnicodeCharacter(0x1F60A);    
-    break;
-  case EMOJI_CONFIDENT:
-    typeEmojiUnicodeCharacter(0x1F60E);    
-    break;
-  case EMOJI_FLIRTY:
-    typeEmojiUnicodeCharacter(0x1F618);    
-    break;
-  case EMOJI_THINKING:
-    typeEmojiUnicodeCharacter(0x1F914);    
-    break;
-  case EMOJI_DISBELIEF:
-    typeEmojiUnicodeCharacter(0x1F644);    
-    break;
-  case EMOJI_MISCHIEVOUS:
-    typeEmojiUnicodeCharacter(0x1F61C);    
-    break;
-  case EMOJI_UPSIDE_DOWN:
-    typeEmojiUnicodeCharacter(0x1F643);    
-    break;
-  case EMOJI_ANNOYED:
-    typeEmojiUnicodeCharacter(0x1F624);    
-    break;
-  case EMOJI_EXPLODING_HEAD:
-    typeEmojiUnicodeCharacter(0x1F92F);    
-    break;
-  case EMOJI_GRIMACED:
-    typeEmojiUnicodeCharacter(0x1F62C);    
-    break;
-  case EMOJI_FLUSHED:
-    typeEmojiUnicodeCharacter(0x1F633);    
-    break;
-  case EMOJI_CRAZY:
-    typeEmojiUnicodeCharacter(0x1F92A);    
-    break;
-  case EMOJI_ILL:
-    typeEmojiUnicodeCharacter(0x1F637);    
-    break;
-  case EMOJI_VOMITING:
-    typeEmojiUnicodeCharacter(0x1F92E);    
-    break;
-  case EMOJI_NERD:
-    typeEmojiUnicodeCharacter(0x1F913);    
-    break;
-  case EMOJI_CROSSBONES:
-    typeEmojiUnicodeCharacter(0x2620);    
-    break;
-  case EMOJI_MAN_DANCING:
-    typeEmojiUnicodeCharacter(0x1F57A);    
-    break;
-  case EMOJI_VULCAN:
-    typeEmojiUnicodeCharacter(0x1F596);    
-    break;
-  case EMOJI_METAL:
-    typeEmojiUnicodeCharacter(0x1F918);    
-    break;
-  case EMOJI_THUMBSUP:
-    typeEmojiUnicodeCharacter(0x1F44D);    
-    break;
-  case EMOJI_THUMBSDOWN:
-    typeEmojiUnicodeCharacter(0x1F44E);    
-    break;
-  case EMOJI_WAVE:
-    typeEmojiUnicodeCharacter(0x1F44B);    
-    break;
-  case EMOJI_EYES:
-    typeEmojiUnicodeCharacter(0x1F440);    
-    break;
-  case EMOJI_HEART:
-    typeEmojiUnicodeCharacter(0x2764);    
-    break;
-  case EMOJI_BOOM:
-    typeEmojiUnicodeCharacter(0x1F4A5);    
-    break;
-  case EMOJI_HOLE:
-    typeEmojiUnicodeCharacter(0x1F573);    
-    break;
-  case EMOJI_UNICORN_FACE:
-    typeEmojiUnicodeCharacter(0x1F984);    
-    break;
-  case EMOJI_SNAIL:
-    typeEmojiUnicodeCharacter(0x1F40C);    
-    break;
-  case EMOJI_CRICKET:
-    typeEmojiUnicodeCharacter(0x1F997);    
-    break;
-  case EMOJI_SUNFLOWER:
-    typeEmojiUnicodeCharacter(0x1F33B);    
-    break;
-  case EMOJI_PEACH:
-    typeEmojiUnicodeCharacter(0x1F351);    
-    break;
-  case EMOJI_CONSTRUCTION:
-    typeEmojiUnicodeCharacter(0x1F6A7);    
-    break;
-  case EMOJI_ROCKET:
-    typeEmojiUnicodeCharacter(0x1F680);    
-    break;
-  case EMOJI_HOURGLASS_FLOWING:
-    typeEmojiUnicodeCharacter(0x23F3);    
-    break;
-  case EMOJI_SPARKLES:
-    typeEmojiUnicodeCharacter(0x2728);    
-    break;
-  case EMOJI_BALLOON:
-    typeEmojiUnicodeCharacter(0x1F388);    
-    break;
-  case EMOJI_PARTY:
-    typeEmojiUnicodeCharacter(0x1F389);    
-    break;
-  case EMOJI_GIFT:
-    typeEmojiUnicodeCharacter(0x1F381);    
-    break;
-  case EMOJI_MOBILE:
-    typeEmojiUnicodeCharacter(0x1F4F1);    
-    break;
-  case EMOJI_KEYBOARD:
-    typeEmojiUnicodeCharacter(0x2328);    
-    break;
-  case EMOJI_ENVELOPE:
-    typeEmojiUnicodeCharacter(0x2709);    
-    break;
-  case EMOJI_SHOPPING_CART:
-    typeEmojiUnicodeCharacter(0x1F6D2);    
-    break;
-  case EMOJI_WARNING:
-    typeEmojiUnicodeCharacter(0x26A0);    
-    break;
-  case EMOJI_WHITE_CHECK_MARK:
-    typeEmojiUnicodeCharacter(0x2705);    
-    break;
-  case EMOJI_CROSS_MARK:
-    typeEmojiUnicodeCharacter(0x274C);    
-    break;
+  uint32_t *sequence = {};
+  size_t size = 0;
+  switch (key.raw) {
+    case EMOJI_JOYFUL:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83d, 0xde02};
+      break;
+    case EMOJI_SMILE:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83d, 0xde03};
+      break;
+    case EMOJI_WINK:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83d, 0xde09};
+      break;
+    case EMOJI_BLUSH:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83d, 0xde0a};
+      break;
+    case EMOJI_CONFIDENT:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83d, 0xde0e};
+      break;
+    case EMOJI_FLIRTY:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83d, 0xde18};
+      break;
+    case EMOJI_THINKING:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83e, 0xdd14};
+      break;
+    case EMOJI_DISBELIEF:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83d, 0xde44};
+      break;
+    case EMOJI_MISCHIEVOUS:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83d, 0xde1c};
+      break;
+    case EMOJI_UPSIDE_DOWN:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83d, 0xde43};
+      break;
+    case EMOJI_ANNOYED:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83d, 0xde24};
+      break;
+    case EMOJI_EXPLODING_HEAD:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83e, 0xdd2f};
+      break;
+    case EMOJI_GRIMACED:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83d, 0xde2c};
+      break;
+    case EMOJI_FLUSHED:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83d, 0xde33};
+      break;
+    case EMOJI_CRAZY:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83e, 0xdd2a};
+      break;
+    case EMOJI_ILL:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83d, 0xde37};
+      break;
+    case EMOJI_VOMITING:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83e, 0xdd2e};
+      break;
+    case EMOJI_NERD:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83e, 0xdd13};
+      break;
+    case EMOJI_CROSSBONES:
+      size = 2;
+      sequence = new uint32_t[size]{0x2620, 0xfe0f};
+      break;
+    case EMOJI_MAN_DANCING:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83d, 0xdd7a};
+      break;
+    case EMOJI_VULCAN:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83d, 0xdd96};
+      break;
+    case EMOJI_METAL:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83e, 0xdd18};
+      break;
+    case EMOJI_THUMBSUP:
+      size = 3;
+      sequence = new uint32_t[size]{0xd83d, 0xdc4d, 0xfe0f};
+      break;
+    case EMOJI_THUMBSDOWN:
+      size = 3;
+      sequence = new uint32_t[size]{0xd83d, 0xdc4e, 0xfe0f};
+      break;
+    case EMOJI_WAVE:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83d, 0xdc4b};
+      break;
+    case EMOJI_EYES:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83d, 0xdc40};
+      break;
+    case EMOJI_HEART:
+      size = 2;
+      sequence = new uint32_t[size]{0x2764, 0xfe0f};
+      break;
+    case EMOJI_BOOM:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83d, 0xdca5};
+      break;
+    case EMOJI_HOLE:
+      size = 3;
+      sequence = new uint32_t[size]{0xd83d, 0xdd73, 0xfe0f};
+      break;
+    case EMOJI_UNICORN_FACE:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83e, 0xdd84};
+      break;
+    case EMOJI_SNAIL:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83d, 0xdc0c};
+      break;
+    case EMOJI_CRICKET:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83e, 0xdd97};
+      break;
+    case EMOJI_SUNFLOWER:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83c, 0xdf3b};
+      break;
+    case EMOJI_PEACH:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83c, 0xdf51};
+      break;
+    case EMOJI_CONSTRUCTION:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83d, 0xdea7};
+      break;
+    case EMOJI_ROCKET:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83d, 0xde80};
+      break;
+    case EMOJI_HOURGLASS_FLOWING:
+      size = 2;
+      sequence = new uint32_t[size]{0x23f3, 0xfe0f};
+      break;
+    case EMOJI_SPARKLES:
+      size = 1;
+      sequence = new uint32_t[size]{0x2728};
+      break;
+    case EMOJI_BALLOON:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83c, 0xdf88};
+      break;
+    case EMOJI_PARTY:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83c, 0xdf89};
+      break;
+    case EMOJI_GIFT:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83c, 0xdf81};
+      break;
+    case EMOJI_MOBILE:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83d, 0xdcf1};
+      break;
+    case EMOJI_KEYBOARD:
+      size = 2;
+      sequence = new uint32_t[size]{0x2328, 0xfe0f};
+      break;
+    case EMOJI_ENVELOPE:
+      size = 2;
+      sequence = new uint32_t[size]{0x2709, 0xfe0f};
+      break;
+    case EMOJI_SHOPPING_CART:
+      size = 2;
+      sequence = new uint32_t[size]{0xd83d, 0xded2};
+      break;
+    case EMOJI_WARNING:
+      size = 2;
+      sequence = new uint32_t[size]{0x26a0, 0xfe0f};
+      break;
+    case EMOJI_WHITE_CHECK_MARK:
+      size = 1;
+      sequence = new uint32_t[size]{0x2705};
+      break;
+    case EMOJI_CROSS_MARK:
+      size = 1;
+      sequence = new uint32_t[size]{0x274c};
+      break;
   }
+  typeEmojiUnicodeSequence(sequence, size);
 }
 
-void typeEmojiUnicodeCharacter(uint32_t character) {
-  uint32_t sequence[1] = {character};
-  typeEmojiUnicodeSequence(sequence, 1);
-}
-
-void typeEmojiUnicodeSequence(uint32_t sequence[], size_t size) {
+void typeEmojiUnicodeSequence(uint32_t *sequence, size_t size) {
   emojiTypingWillStart();
-  Unicode::start();
+  ::Unicode.start();
 
   for (uint8_t i = 0; i < size; i++) {
-    Unicode::typeCode(sequence[i]);
+    ::Unicode.typeCode(sequence[i]);
   }
 
-  Unicode::end();
+  ::Unicode.end();
   emojiTypingDidFinish();
 }
 
